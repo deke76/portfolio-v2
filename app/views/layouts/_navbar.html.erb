@@ -1,0 +1,9 @@
+<nav class="navbar fixed-bottom navbar-dark bg-dark bg-lighten-md">
+  <div class="container-fluid navbar-nav flex-row justify-content-around">
+    <% @links.each do |key, value| %>
+      <%= link_to send("#{key}_path"), class: "nav-link" do %>
+        <%= embedded_svg(value, class: {fill: "white"}) %>
+      <% end %>
+    <% end %>
+  </div>
+</nav>
