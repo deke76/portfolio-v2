@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+rand(50).times do |i|
+  app_name = Faker::App.name
+  Project.create!({
+    name: Faker::Commerce.product_name,
+    git_url: "http://github.com/#{Faker::Internet::username}/#{app_name}",
+    deployed_url: "http://app_name.#{Faker::Internet.domain_suffix}
+    ",
+    description: Faker::Lorem::paragraph(sentence_count: rand(20)),
+  })
+end

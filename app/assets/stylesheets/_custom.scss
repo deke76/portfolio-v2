@@ -1,14 +1,57 @@
+#main-content {
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
+  padding: 5em 5em 5em 8em;
+}
+
+#page-content {
+  border-radius: 5%;
+}
+
+.navbar-nav {
+  padding: 0;
+  height: 100%;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width:20%;
+
+  &:hover {
+    @extend .bg-secondary;
+  }
+}
+
 .navbar {
+  @extend .mb-3;
   height: 3em;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
 }
 
 @include media-breakpoint-up(md){
   .navbar {
     height: 100vh;
     width: 3em;
+    margin-bottom: 0 !important;
+    margin-left: 1rem;
+    padding: 0.5rem 0;
   }
 
   .navbar-nav {
     height: 100%;
+  }
+
+  .nav-item {
+    height: 20%;
+    width: 100%;
+  }
+
+  #main-content {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5%;
   }
 }
