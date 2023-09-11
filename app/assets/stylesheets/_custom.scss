@@ -1,39 +1,14 @@
 .navbar {
-  margin-bottom: 1em;
-}
-
-.nav-link {
-  display: flex;
-  justify-content: center;
-}
-
-.container-fluid.navbar-nav {
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-}
-
-svg {
-  width: 25%;
-  fill: white;
+  height: 3em;
 }
 
 @include media-breakpoint-up(md){
-  .navbar .container-fluid, 
-  .navbar-expand-lg .navbar-nav {
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100vh;
-    padding: 0;
-  }
-  
   .navbar {
-    margin-left: 1em;
-    margin-bottom: 0;
-    width: 10vw;
     height: 100vh;
+    width: 3em;
   }
 
-  svg {
-    height: 40%;
+  .navbar-nav {
+    height: 100%;
   }
 }

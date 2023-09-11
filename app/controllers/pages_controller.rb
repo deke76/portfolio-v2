@@ -2,11 +2,11 @@ class PagesController < ApplicationController
 
   def index
     @links = {
-      "settings": "bars-solid.svg",
-      "details": "circle-info-solid.svg",
-      "projects": "puzzle-piece-solid.svg",
-      "contacts": "paper-plane-solid.svg",
-      "socials": "at-solid.svg"
+      "settings": "bi-list",
+      "details": "bi-person-circle",
+      "projects": "bi-puzzle-fill",
+      "contacts": "bi-send-fill",
+      "socials": "bi-at"
     }
   end
 
