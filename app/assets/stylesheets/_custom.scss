@@ -1,7 +1,8 @@
 #main-content {
   border-top-right-radius: 5%;
   border-top-left-radius: 5%;
-  padding: 5em 5em 5em 8em;
+  padding: 5em;
+  padding-bottom: 8em;
 }
 
 #page-content {
@@ -53,5 +54,7 @@
   #main-content {
     border-top-left-radius: 0;
     border-bottom-right-radius: 5%;
-  }
+    padding: 5em;
+    padding-left: 8em;
+  }  
 }
