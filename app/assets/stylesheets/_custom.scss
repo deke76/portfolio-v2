@@ -1,12 +1,65 @@
+$enable-gradients: true;
+
+::-webkit-scrollbar {
+  width: 75%;
+  height: 0.5em;
+
+  &-thumb {
+    border-radius: 1em;
+    background: $light;
+
+    &:hover {
+      background: $secondary
+    }
+  }
+}
+
+.card-text p {
+  max-height: calc(4rem * $line-height-base);
+  overflow:hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: linear-gradient(165deg, transparent 45%, var(--bs-card-bg) 95%);
+    display: block;
+    height: calc(8rem * $line-height-base + 1px);
+    inset-block-end: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
 #main-content {
   border-top-right-radius: 5%;
   border-top-left-radius: 5%;
-  padding: 5em;
-  padding-bottom: 8em;
+  padding: 2em;
+  padding-bottom: 5em;
 }
 
 #page-content {
   border-radius: 5%;
+}
+
+.container-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 1em;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.card-footer {
+  height: 15%
+}
+
+.rounded-bottom-left {
+  border-bottom-left-radius: $border-radius !important;
+}
+
+.rounded-bottom-right {
+  border-bottom-right-radius: $border-radius !important;
 }
 
 .navbar-nav {
@@ -22,7 +75,7 @@
   width:20%;
 
   &:hover {
-    @extend .bg-secondary;
+    background-color: $secondary ;
   }
 }
 
@@ -54,7 +107,11 @@
   #main-content {
     border-top-left-radius: 0;
     border-bottom-right-radius: 5%;
-    padding: 5em;
-    padding-left: 8em;
-  }  
+    padding: 2em;
+    padding-left: 5em;
+  }
+
+  .card-text p {
+    max-height: calc(8rem * $line-height-base);
+  }
 }

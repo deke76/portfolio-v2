@@ -11,7 +11,7 @@ rand(50).times do |i|
   Project.create!({
     name: Faker::Commerce.product_name,
     git_url: "http://github.com/#{Faker::Internet::username}/#{app_name}",
-    deployed_url: "http://app_name.#{Faker::Internet.domain_suffix}
+    deployed_url: "http://#{app_name}.#{Faker::Internet.domain_suffix}
     ",
     description: Faker::Lorem::paragraph(sentence_count: rand(20)),
   })
