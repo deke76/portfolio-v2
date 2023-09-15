@@ -1,4 +1,4 @@
-class ContactsController < ApplicationController
+class MessagesController < ApplicationController
   def index
     redirect_to new_message_path
   end

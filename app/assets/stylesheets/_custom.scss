@@ -1,5 +1,11 @@
 $enable-gradients: true;
 
+.input-group-text {
+  background-color: $secondary;
+  color: $light;
+  border: none !important;
+}
+
 ::-webkit-scrollbar {
   width: 75%;
   height: 0.5em;
