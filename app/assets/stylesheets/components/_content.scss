@@ -1,0 +1,19 @@
+#main-content {
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
+  padding: 2em;
+  padding-bottom: 5em;
+}
+
+#page-content {
+  border-radius: 5%;
+}
+
+@include media-breakpoint-up(md){
+  #main-content {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5%;
+    padding: 2em;
+    padding-left: 5em;
+  }
+}

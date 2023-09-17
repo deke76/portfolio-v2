@@ -1,0 +1,47 @@
+.container-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 1em;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.card-footer {
+  height: 15%
+}
+
+.card-text {
+  max-height: calc(4rem * $line-height-base);
+  overflow:hidden;
+  position: relative;
+  width: 100%;
+
+  &-scroll {
+    max-height: calc(12rem * $line-height-base);
+    overflow: scroll;
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    background: linear-gradient(165deg, transparent 45%, var(--bs-card-bg) 95%);
+    display: block;
+    height: calc(4rem * $line-height-base + 1px);
+    inset-block-end: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-up(md){
+  .card-text {
+    max-height: calc(8rem * $line-height-base);
+
+    &-scroll {
+      max-height: calc(12rem * $line-height-base);
+      overflow: scroll;
+      width: 100%;
+    }
+  }
+}

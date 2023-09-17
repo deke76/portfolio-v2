@@ -1,6 +1,12 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-
 @import 'rails_bootstrap_forms.css';
 
-@import './custom';
+@import 'config/variables.css';
+
+@import 'layouts/radius.css';
+
+@import 'components/navbar';
+@import 'components/forms';
+@import 'components/cards';
+@import 'components/content';

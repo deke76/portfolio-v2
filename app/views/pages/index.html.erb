@@ -1,6 +1,10 @@
 <div class="container-fluid bg-primary px-2 py-2 vh-100">
   <div class="container-fluid bg-secondary h-100" id="main-content">
-    <%= turbo_frame_tag "turbo-page-content" do %>
-    <% end %>
+    <div class="container bg-dark h-100 py-3" id='page-content'>
+      <div class="container d-flex flex-column text-center h-100 text-light">
+          <%= turbo_frame_tag "turbo-page-content", class: "h-100 d-flex flex-column" do %>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>

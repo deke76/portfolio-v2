@@ -1,4 +1,19 @@
-<%= turbo_frame_tag "turbo-page-content" do %>
-  <h1>Details#index</h1>
-  <p>Find me in app/views/details/index.html.erb</p>
+<%= turbo_frame_tag "turbo-page-content", class: "h-50" do %>
+  <div class="container border-bottom border-secondary">
+    <h2 class="text-light text-center">About Me</h2>    
+  </div>
+  <div class="card bg-dark rounded-top-0">
+    <div class="row g-0">
+      <div class="col-md-4 d-none d-md-block py-3">
+        <%= image_tag "darcy_lauder_profile.png", class: "bg-secondary rounded", style: "width: 70%", alt: "Picture of the author in a 3 piece suit." %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="card-text-scroll text-light">
+            <%= render "description"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
 <% end %>
