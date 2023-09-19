@@ -1,21 +1,10 @@
 <%= turbo_frame_tag "turbo-page-content" do %>
 
-      <form class="mb-3">
-        <div class="container input-group rounded p-0">
-          <span class="input-group-text bg-secondary border-0">
-            <i class="bi bi-search text-light"></i>
-          </span>
-          <input type="text" class="form-control">
-          <span class="input-group-text bg-secondary border-0">
-            <a href="#" class="text-light text-decoration-none fst-italic" type="submit" disabled>Search</a>
-          </span>
-        </div>
-      </form>
-
-    <div class="container-fluid h-100 pb-2">
-      <div class="column flex-sm-row card-group h-100 pt-0 pb-2 px-0">
-        <%= render @projects %>
-      </div>
+  <%= render "layouts/page_header", page_name: "Projects" %>
+  <div class="container-fluid h-100 pb-2">
+    <div class="column flex-sm-row card-group h-100 pt-0 pb-2 px-0">
+      <%= render @projects %>
     </div>
+  </div>
       
 <% end %>
