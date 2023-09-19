@@ -1,52 +1,42 @@
-.container-cards {
+.card-group {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 1em;
   overflow-x: hidden;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
-.card-footer {
-  height: calc(1.5rem * $line-height-base);
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
-.card-header {
-  max-height: calc(3rem * $line-height-base);
+.card-body, .card-footer {
+  flex: 0 1 auto;
+}
+
+.card-header, .card-group > .card {
+  flex: 1 0 auto;
 }
 
 .card-text {
-  // max-height: calc(4rem * $line-height-base);
-  max-height: 75%;
-  overflow: hidden;
+  max-height: 100%;
+  overflow-y: scroll;
   position: relative;
   width: 100%;
 
   &-scroll {
-    // max-height: calc(12rem * $line-height-base);
-    max-height: 100%;
-    overflow: scroll;
-    width: 100%;
-  }
-
-  &::after {
-    content: "";
-    background: linear-gradient(165deg, transparent 45%, var(--bs-card-bg) 95%);
-    display: block;
-    // height: calc(4rem * $line-height-base + 1px);
-    height: 60%;
-    inset-block-end: 0;
-    position: absolute;
-    width: 100%;
+    @extend .card-text;
+    overflow-x: hidden;
+    position: relative;
   }
 }
 
 @include media-breakpoint-up(sm) {
-  .container-cards {
-    display: flex;
+  .card-group {
     flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 1em;
     overflow-y: hidden;
     overflow-x: scroll;
     height: 100%;
