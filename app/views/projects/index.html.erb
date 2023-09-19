@@ -1,6 +1,5 @@
 <%= turbo_frame_tag "turbo-page-content" do %>
 
-
       <form class="mb-1">
         <div class="container input-group rounded p-0">
           <span class="input-group-text bg-secondary border-0">
@@ -13,8 +12,8 @@
         </div>
       </form>
 
-    <div class="container-fluid flex-grow-1 d-flex rounded">
-      <div class="row container-cards">
+    <div class="container-fluid h-100">
+      <div class="row container-cards h-100">
         <%= render @projects %>
       </div>
     </div>

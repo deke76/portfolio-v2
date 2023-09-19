@@ -1,19 +1,18 @@
-<div class="card m-1 col-5 col-md-4 col-lg-3 h-100 d-flex flex-column p-0">
+<div class="card m-1 col-sm-5 col-lg-3 h-100 d-flex flex-column p-0">
   <div class="card-header text-center  fst-italic">
     <%= link_to project, class: "text-decoration-none text-secondary" do %>
       <%= project.name %>
     <% end %>
   </div>
-  <div class="card-body flex-fill flex-grow-1">
+  <div class="card-body p-1 h-75">
     <div class="card-text">
       <p><%= project.description %></p>
     </div>
   </div>
-  <div class="card-footer p-0 d-flex flex-row justify-content-evenly align-items-center">
-    <% project_url = project.deployed_url %>
-    <% if project_url != "" %>
+  <div class="card-footer p-2 d-flex flex-row justify-content-evenly align-items-center">
+    <% if project.deployed_url != "" %>
     <% then %>
-      <%= link_to project_url, 
+      <%= link_to project.deployed_url, 
           :target => "_blank" do %>
         <i class="bi bi-link-45deg text-secondary"></i>
       <% end %>

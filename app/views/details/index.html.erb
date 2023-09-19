@@ -1,14 +1,14 @@
 <%= turbo_frame_tag "turbo-page-content", class: "h-50" do %>
-  <div class="container border-bottom border-secondary">
+  <div class="container border-bottom border-secondary mb-3">
     <h2 class="text-light text-center">About Me</h2>    
   </div>
-  <div class="card bg-dark rounded-top-0 h-100">
-    <div class="row g-0 h-100">
-      <div class="col-md-4 d-none d-md-block py-3">
-        <%= image_tag "darcy_lauder_profile.png", class: "bg-secondary rounded", style: "width: 70%", alt: "Picture of the author in a 3 piece suit." %>
+  <div class="card bg-dark rounded-top-0 h-100 pb-3">
+    <div class="row g-0 h-100 flex-column">
+      <div class="col-md-4 d-none d-md-flex justify-content-center align-items-center bg-secondary rounded h-100 my-auto">
+        <%= image_tag "darcy_lauder_profile.png", class: "bg-secondary rounded img-responsive", style: "width: 70%", alt: "Picture of the author in a 3 piece suit." %>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
+      <div class="col-md-8 h-100">
+        <div class="card-body px-3 py-0 h-100">
           <div class="card-text-scroll text-light">
             <%= render "description"%>
           </div>

@@ -1,24 +1,30 @@
 .container-cards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   padding: 1em;
-  overflow-y: hidden;
-  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .card-footer {
-  height: 15%
+  height: calc(1.5rem * $line-height-base);
+}
+
+.card-header {
+  max-height: calc(3rem * $line-height-base);
 }
 
 .card-text {
-  max-height: calc(4rem * $line-height-base);
-  overflow:hidden;
+  // max-height: calc(4rem * $line-height-base);
+  max-height: 75%;
+  overflow: hidden;
   position: relative;
   width: 100%;
 
   &-scroll {
-    max-height: calc(12rem * $line-height-base);
+    // max-height: calc(12rem * $line-height-base);
+    max-height: 100%;
     overflow: scroll;
     width: 100%;
   }
@@ -27,21 +33,22 @@
     content: "";
     background: linear-gradient(165deg, transparent 45%, var(--bs-card-bg) 95%);
     display: block;
-    height: calc(4rem * $line-height-base + 1px);
+    // height: calc(4rem * $line-height-base + 1px);
+    height: 60%;
     inset-block-end: 0;
     position: absolute;
     width: 100%;
   }
 }
 
-@include media-breakpoint-up(md){
-  .card-text {
-    max-height: calc(8rem * $line-height-base);
-
-    &-scroll {
-      max-height: calc(12rem * $line-height-base);
-      overflow: scroll;
-      width: 100%;
-    }
+@include media-breakpoint-up(sm) {
+  .container-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 1em;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: 100%;
   }
 }
