@@ -7,7 +7,7 @@
   <% end %>
   <%= form.text_field :full_name, prepend: person_icon, hide_label: true, layout: :inline %>
   <%= form.email_field :email, prepend: email_icon, hide_label: true, layout: :inline %>
-  <%= form.text_area :body, rows: 6, hide_label: true, layout: :inline %>
+  <%= form.text_area :body, hide_label: true, layout: :inline %>
   <%= form.submit "Send", class: "btn btn-secondary w-100 mb-3" %>
   <div class="container border-bottom border-secondary mb-3"></div>
 <% end%>
