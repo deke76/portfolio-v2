@@ -4,13 +4,12 @@
   flex-wrap: nowrap;
   padding: 1em;
   overflow-x: hidden;
-  // overflow-y: scroll;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .card-body, .card-footer {

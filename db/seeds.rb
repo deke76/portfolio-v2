@@ -16,3 +16,39 @@ rand(50).times do |i|
     description: Faker::Lorem::paragraph(sentence_count: rand(20)),
   })
 end
+
+Social.create!({
+  name: "LinkedIn",
+  icon: "bi-linkedin",
+  link: "linkedin.com/in/darcylauder",
+})
+
+Social.create!({
+  name: "Github",
+  icon: "bi-github",
+  link: "github.com/deke76"
+})
+
+Social.create!({
+  name: "Stack Overflow",
+  icon: "bi-stack-overflow",
+  link: "stackoverflow.com/users/20403091/darcy?tab=profile"
+})
+
+Social.create!({
+  name: "Facebook",
+  icon: "bi-facebook",
+  link: "facebook.com/darcy.lauder.7"
+})
+
+Social.create!({
+  name: "Instagram",
+  icon: "bi-instagram",
+  link: "facebook.com/darcy.lauder.7"
+})
+
+Social.create!({
+  name: "Twitter",
+  icon: "bi-twitter-x",
+  link: "twitter.com/DKLaudsie"
+})

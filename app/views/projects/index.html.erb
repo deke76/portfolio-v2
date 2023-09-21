@@ -1,6 +1,7 @@
 <%= turbo_frame_tag "turbo-page-content" do %>
 
   <%= render "layouts/page_header", page_name: "Projects" %>
+  
   <div class="container-fluid h-100 pb-2">
     <div class="column flex-sm-row card-group h-100 pt-0 pb-2 px-0">
       <%= render @projects %>
