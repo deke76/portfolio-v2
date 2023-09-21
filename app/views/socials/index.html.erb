@@ -1,5 +1,14 @@
 <%= turbo_frame_tag "turbo-page-content" do %>
   
   <%= render "layouts/page_header", page_name: "Social Media"%>
-  <p>Find me in app/views/socials/index.html.erb</p>
+  
+  <div class="container-fluid d-flex flex-column justify-content-between h-100">
+    <div>
+      <%= render @socials %>
+    </div>
+    <div>
+      <%= turbo_frame_tag "turbo-social-content", class: "h-100 d-flex flex-column pb-5" do %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

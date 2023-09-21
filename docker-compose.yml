@@ -9,6 +9,7 @@ services:
       - "3000:3000"
     env_file:
       - rails.env
+      - twitter.env
     depends_on:
       db:
         condition: service_healthy
