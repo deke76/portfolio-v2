@@ -1,6 +1,10 @@
 <div>
-  <%= turbo_frame_tag %>
-  <button class="btn btn-secondary rounded-circle mx-3">
-    <i class="bi <%= social.icon %> text-light"></i>
-  </button>
+  <%= turbo_frame_tag "social_turbo_frame" do %>
+    <%= link_to send("#{social.snake_name}_index_path"), 
+          data: { turbo_frame: "turbo-social-content" } do %>
+      <button class="btn btn-secondary rounded-circle mx-3">
+        <i class="bi <%= social.icon %> text-light"></i>
+      </button>
+    <% end %>
+  <% end %>
 </div>
