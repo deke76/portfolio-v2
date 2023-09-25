@@ -7,12 +7,12 @@ class SocialsController < ApplicationController
       "access_token": ENV.fetch("TWITTER_API_ACCESS_TOKEN"),
       "access_token_secret": ENV.fetch("TWITTER_API_ACCESS_SECRET")
     }
-    @x_client = X::Client.new(**x_credentials)
+    # @x_client = X::Client.new(**x_credentials)
+    # @twitter_user = @x_client.get("users/me")
   end
   
   def index
     @socials = Social.all
-    @twitter_user = @x_client.get("users/me")
   end
 
 end
