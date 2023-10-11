@@ -82,3 +82,4 @@ group :test do
 end
 
 gem "x", "~> 0.8.1"
+gem "httparty", "~> 0.21.0"

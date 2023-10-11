@@ -1,0 +1,22 @@
+<div class="d-flex flex-column" id="stack-questions">
+  <% @stack_questions.each do |question| %>
+    <%= link_to question["link"], target: "_blank", class: "text-decoration-none" do %>
+      <div class="card p-0 my-1">
+        <div class="card-header">
+          <%= Nokogiri::HTML.parse(question["title"]).text %>
+        </div>
+        <div class="card-body d-flex justify-content-between align-items-center fs-half p-1">
+          <div class="fw-lighter ps-1">
+            <% question["tags"].each do |tag| %>
+              <span class="bg-secondary text-light rounded px-1"><%= tag %></span>
+            <% end %>
+          </div>
+          <div class="fw-lighter fst-italic pe-1">
+            <%= question_status question %>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
