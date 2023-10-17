@@ -1,0 +1,14 @@
+<div class="d-flex flex-row flex-md-column justify-content-evenly px-4 py-2 py-md-0 outline">
+  <div class="position-relative h-25">
+    <%= embedded_svg "repository.svg", class: "h-100" %>
+    <span class="fs-half bg-secondary rounded-pill position-absolute px-2 translate-middle-x"><%= @github_profile["public_repos"] %></span>
+  </div>
+  <div class="position-relative h-25">
+    <%= embedded_svg "followers.svg", class: "h-100" %>
+    <span class="fs-half bg-secondary rounded-pill position-absolute px-2 translate-middle-x"><%= @github_profile["followers"] %></span>
+  </div>
+  <div class="position-relative h-25">
+    <%= embedded_svg "following.svg", class: "h-100" %>
+    <span class="fs-half bg-secondary rounded-pill position-absolute px-2 translate-middle-x"><%= @github_profile["following"] %></span>
+  </div>
+</div>
