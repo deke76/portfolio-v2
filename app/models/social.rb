@@ -19,7 +19,6 @@ class Social < ApplicationRecord
       "stack_profile",
       expires_in: 24.hours
     ) do
-      "getting data from Stack Overflow..."
       HTTParty.get(user_url)["items"][0]
     end
   end
@@ -28,7 +27,7 @@ class Social < ApplicationRecord
     questions_url = "https://api.stackexchange.com/2.3/users/20403091/questions?order=desc&sort=activity&site=stackoverflow"
 
     Rails.cache.fetch(
-      "stack_questions",
+      [self, :stack_questions],
       expires_in: 24.hours
     ) do
       HTTParty.get(questions_url)["items"]

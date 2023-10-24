@@ -2,14 +2,14 @@ services:
   web:
     build: .
     working_dir: /src
-    command: sh -c "rm -rf tmp/pids/server.pid && yarn install & bin/dev"
+    command: sh -c "rm -rf tmp/pids/server.pid && yarn install && bin/dev"
     volumes:
       - .:/src
+      - /src/node_modules
     ports:
       - "3000:3000"
     env_file:
       - rails.env
-      - twitter.env
       - github.env
     depends_on:
       db:
