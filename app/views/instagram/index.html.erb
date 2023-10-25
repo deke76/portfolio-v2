@@ -1,4 +1,6 @@
 <%= turbo_frame_tag "turbo-social-content" do %>
-  <h1>Instagram#index</h1>
-  <p>Find me in app/views/instagram/:index.html.erb</p>
+  <div class="card h-100 bg-dark position-relative">
+    <iframe class="card-body h-100" src='https://widgets.sociablekit.com/instagram-feed/iframe/215401' frameborder='0'></iframe>
+  </div>
+  <%= render "/layouts/new_tab_link", social_link: params[:link] %>
 <% end %>
