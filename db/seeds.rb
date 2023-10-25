@@ -36,12 +36,6 @@ Social.create!({
 })
 
 Social.create!({
-  name: "Facebook",
-  icon: "bi-facebook",
-  link: "facebook.com/darcy.lauder.7"
-})
-
-Social.create!({
   name: "Instagram",
   icon: "bi-instagram",
   link: "facebook.com/darcy.lauder.7"
