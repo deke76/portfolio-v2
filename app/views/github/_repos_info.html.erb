@@ -1,4 +1,4 @@
-<div class="d-flex flex-column" id="git-repos">
+<div class="py-0 px-1 overflow-y-scroll" id="git-repos">
   <% @github_repos.each do |repo| %>
     <%= link_to repo["html_url"], target: "_blank", class: "text-decoration-none" do %>
       <div class="card p-0 my-1">
@@ -10,8 +10,8 @@
             <%= repo["description"] %>
           </div>
           <% end %>
-        <div class="card-footer d-flex justify-content-between align-items-center fw-lighter fs-three_quarter p-1">
-          <div class="fs-three_quarter ps-1">
+        <div class="card-footer d-flex justify-content-between align-items-center fw-lighter fs-half p-1">
+          <div class="ps-1">
             <% @github_repo_tags[repo["name"]].each do |language|
              %>
               <span class="bg-secondary text-light rounded px-1"><%= language %></span>
@@ -25,3 +25,20 @@
     <% end %>
   <% end %>
 </div>
+
+<script>
+  overflowSize = () => {
+    const pageContent = document.getElementById("page-content");
+    const githubRepoContainer = document.getElementById("git-repos");
+    const githubRepoContainerTop = githubRepoContainer.getBoundingClientRect().top;
+    const githubRepoContainerBottom = pageContent.getBoundingClientRect().bottom;
+    const githubRepoContainerHeight = githubRepoContainerBottom - githubRepoContainerTop;
+    githubRepoContainer.style.height = `calc(${githubRepoContainerHeight}px - 1.25rem)`;  
+  }
+
+  overflowSize();
+  
+  onresize = (event) => {
+    overflowSize();
+  }
+</script>

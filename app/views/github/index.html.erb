@@ -1,14 +1,12 @@
 <%= turbo_frame_tag "turbo-social-content" do %>
   <div class="card h-100 bg-dark text-light justify-content-start position-relative">
-    <div class="card-body">
-      <div class="d-flex flex-column">
-        <div class="d-flex flex-column flex-md-row justifyh-content-md-between mb-3">
+      <div class="card-body d-flex flex-column">
+        <div class="d-flex flex-column flex-md-row justify-content-md-between mb-3">
           <%= render "user_info" %>
           <%= render "badge_info" %>
         </div>
         <%= render "repos_info"%>
       </div>
-    </div>
   </div>
     <%= render "/layouts/new_tab_link", social_link: params[:link] %>
 <% end %>
