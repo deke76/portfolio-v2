@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def new
+    @page_name = "Contact Me"
   end
 
   def create

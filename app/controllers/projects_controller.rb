@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
 
   def index
-      @projects = Project.all
+    @page_name = "Projects"
+    @projects = Project.all
   end
 
   def show

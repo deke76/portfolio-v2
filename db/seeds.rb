@@ -17,32 +17,113 @@ rand(50).times do |i|
   })
 end
 
+Icon.create!({
+  name: "linkedin",
+  bootstrap_class: "bi bi-linkedin",
+  page: "socials",
+})
+
+Icon.create!({
+  name: "github",
+  bootstrap_class: "bi bi-github",
+  page: "socials",
+})
+
+Icon.create!({
+  name: "stack_overflow",
+  bootstrap_class: "bi bi-stack-overflow",
+  page: "socials",
+})
+
+Icon.create!({
+  name: "instagram",
+  bootstrap_class: "bi bi-instagram",
+  page: "socials",
+})
+
+Icon.create!({
+  name: "twitter",
+  bootstrap_class: "bi bi-twitter-x",
+  page: "socials",
+})
+
+Icon.create!({
+  name: "mail",
+  bootstrap_class: "bi bi-envelop",
+  page: "messages",
+})
+
+Icon.create!({
+  name: "chat",
+  bootstrap_class: "bi bi-chat-left",
+  page: "messages",
+})
+
+Icon.create!({
+  name: "telephone",
+  bootstrap_class: "bi bi-telephone-inbound",
+  page: "messages",
+})
+
+Icon.create!({
+  name: "form",
+  bootstrap_class: "bi bi-file-text",
+  page: "messages",
+})
+
+Icon.create!({
+  name: "settings",
+  bootstrap_class: "bi bi-list",
+  page: "pages",
+})
+
+Icon.create!({
+  name: "details",
+  bootstrap_class: "bi bi-person-circle",
+  page: "pages",
+})
+
+Icon.create!({
+  name: "projects",
+  bootstrap_class: "bi bi-puzzle-fill",
+  page: "pages",
+})
+
+Icon.create!({
+  name: "messages",
+  bootstrap_class: "bi bi-send-fill",
+  page: "pages",
+})
+
+Icon.create!({
+  name: "socials",
+  bootstrap_class: "bi bi-at",
+  page: "pages",
+})
+
 Social.create!({
-  name: "LinkedIn",
-  icon: "bi-linkedin",
+  name: "linkedin",
+  icon_id: 1,
   link: "linkedin.com/in/darcylauder",
 })
-
 Social.create!({
-  name: "Github",
-  icon: "bi-github",
+  name: "github",
+  icon_id: 2,
   link: "github.com/deke76"
 })
-
 Social.create!({
-  name: "Stack Overflow",
-  icon: "bi-stack-overflow",
+  name: "stack_overflow",
+  icon_id: 3,
   link: "stackoverflow.com/users/20403091/darcy?tab=profile"
 })
-
 Social.create!({
-  name: "Instagram",
-  icon: "bi-instagram",
+  name: "instagram",
+  icon_id: 4,
   link: "facebook.com/darcy.lauder.7"
 })
-
 Social.create!({
-  name: "Twitter",
-  icon: "bi-twitter-x",
+  name: "twitter",
+  icon_id: 5,
   link: "twitter.com/DKLaudsie"
 })
+
