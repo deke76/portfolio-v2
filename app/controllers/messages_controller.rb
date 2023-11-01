@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
   def index
-    redirect_to new_message_path
+    @page_name = "Contact Me"
+    @menu_items = Icon.where(page: 'messages')
   end
 
   def new
-    @page_name = "Contact Me"
   end
 
   def create

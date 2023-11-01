@@ -1,11 +1,6 @@
 <div>
+  <% puts "social: #{social}" %>
   <%= turbo_frame_tag "social_turbo_frame" do %>
-    <% path = "#{social.snake_name}_index_path" %>
-    <%= link_to send("#{social.snake_name}_index_path", :link => social.link ), 
-          data: { turbo_frame: "turbo-social-content" } do %>
-      <button class="btn btn-secondary rounded-circle mx-3">
-        <i class="bi <%= social.icon %> text-light"></i>
-      </button>
-    <% end %>
+
   <% end %>
 </div>

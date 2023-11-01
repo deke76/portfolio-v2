@@ -1,11 +1,12 @@
 
 <nav class="navbar fixed-bottom navbar-dark bg-dark">
   <div class="container-fluid navbar-nav flex-row flex-md-column justify-content-around">
+    <% puts "links: #{@links}" %>
     <% @links.each do |link| %>
-      <%= link_to send("#{link.name}_path"),
+      <%= turbo_frame_tag "first_turbo_frame", class: "nav-item" do %>
+        <%= link_to send("#{link.name}_path"),
             data: { turbo_frame: "turbo-page-content" },
-            class: "nav-item" do %>
-        <%= turbo_frame_tag "first_turbo_frame", class: "nav-link" do %>
+            class: "nav-link" do %>
         <i class="<%= link.bootstrap_class %>"></i>
         <% end %>
       <% end %>
