@@ -3,12 +3,11 @@
   <%= render "layouts/page_header" %>
   
   <div class="container-fluid d-flex flex-column justify-content-between h-100">
-    <div class="container-fluid d-flex justify-content-around mb-3">
-      <%= render @socials %>
-    </div>
     <div class="container-fluid flex-grow-1" >
+
       <%= turbo_frame_tag "turbo-social-content", class: "h-100 d-flex flex-column" do %>
       <% end %>
+
     </div>
   </div>
 <% end %>

@@ -1,8 +1,12 @@
-    <div class="container d-flex justify-content-between align-items-end pb-1 px-3 mb-2">
-      <div class="text-light fst-italic display-6">
-        <%= @page_name %>
-      </div>
-      <div class="text-light">
-        Context menu
-      </div>
+<div class="container d-flex justify-content-between align-items-end px-3 mb-2" id="page-header">
+  <div class="text-light fst-italic display-6">
+    <%= @page_name %>
+  </div>
+  <% if @menu_items != nil %>
+    <div class="nav justify-content-end text-light">
+      <% @menu_items.each do |item| %>
+        <%= render "layouts/menu_item", menu_item: item %>
+      <% end %>
     </div>
+  <% end %>
+</div>

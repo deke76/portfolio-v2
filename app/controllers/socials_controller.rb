@@ -1,7 +1,7 @@
 class SocialsController < ApplicationController
   def index
     @page_name = "Socials"
-    @socials = Social.all
+    @menu_items = Icon.where(page: "socials")
   end
 
 end

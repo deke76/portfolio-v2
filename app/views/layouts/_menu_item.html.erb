@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "social_turbo_frame", class: "nav-item" do %>
+  <%= link_to send("#{menu_item.name}_index_path"),
+      data: { turbo_frame: "turbo-social-content" },
+      class: "nav-link text-secondary pb-1" do %>
+  <i class="<%= menu_item.bootstrap_class %>"></i>
+  <% end %>
+<% end %>

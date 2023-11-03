@@ -1,5 +1,6 @@
 class LinkedinController < ApplicationController
   def index
-    @content = HTTParty.get('https://widgets.sociablekit.com/instagram-feed/iframe/215401')
+    @social = Social.find_by(name: params[:controller])
+    puts "@social.link: #{@social.link}"
   end
 end

@@ -1,8 +1,9 @@
+<% puts "@social.content: #{@social.content}" %>
 <%= turbo_frame_tag "turbo-social-content" do %>
   <div class="card h-100 bg-dark position-relative">
-    <iframe class='card-body h-100' src='https://widgets.sociablekit.com/linkedin-profile-posts/iframe/198802' frameborder='0'>
+    <iframe class='card-body h-100' src="<%= @social.content %>" frameborder='0'>
     </iframe>
   </div>
-  <%= render "/layouts/new_tab_link", social_link: params[:link] %>
+  <%= render "/layouts/new_tab_link" %>
 <% end %>
 

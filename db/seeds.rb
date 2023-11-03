@@ -43,7 +43,7 @@ Icon.create!({
 
 Icon.create!({
   name: "twitter",
-  bootstrap_class: "bi bi-twitter-x",
+  bootstrap_class: "bi bi-twitter",
   page: "socials",
 })
 
@@ -104,26 +104,35 @@ Icon.create!({
 Social.create!({
   name: "linkedin",
   icon_id: 1,
-  link: "linkedin.com/in/darcylauder",
+  link: "https://www.linkedin.com/in/darcylauder",
+  content: "https://widgets.sociablekit.com/linkedin-profile-posts/iframe/215438"
 })
+
 Social.create!({
   name: "github",
   icon_id: 2,
-  link: "github.com/deke76"
+  link: "https://www.github.com/deke76",
+  content: nil
 })
+
 Social.create!({
   name: "stack_overflow",
   icon_id: 3,
-  link: "stackoverflow.com/users/20403091/darcy?tab=profile"
+  link: "https://www.stackoverflow.com/users/20403091/darcy?tab=profile",
+  content: nil
 })
+
 Social.create!({
   name: "instagram",
   icon_id: 4,
-  link: "facebook.com/darcy.lauder.7"
+  link: "https://www.instagram.com/dklaudsie",
+  content: "https://widgets.sociablekit.com/instagram-feed/iframe/215401"
 })
+
 Social.create!({
   name: "twitter",
   icon_id: 5,
-  link: "twitter.com/DKLaudsie"
+  link: "https://twitter.com/DKLaudsie",
+  content: "https://widgets.sociablekit.com/twitter-feed/iframe/215418"
 })
 

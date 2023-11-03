@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   resources :socials, only: [:index] do
     collection do 
-      resources :linkedin, only: [:index] 
+      resources :linkedin, only: [:index]
       resources :github, only: [:index] 
       resources :stack_overflow, only: [:index] 
       resources :facebook, only: [:index] 

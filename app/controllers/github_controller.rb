@@ -1,5 +1,6 @@
 class GithubController < ApplicationController
   def index
+    @social = Social.find_by(name: params[:controller])
     @github_profile = Social.git_user
     @github_repos = Social.git_repos @github_profile["repos_url"]
     @github_repo_tags ||= {}
