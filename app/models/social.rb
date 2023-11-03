@@ -1,15 +1,18 @@
 class Social < ApplicationRecord
-  # def initialize(
-  #   user_url = "https://api.stackexchange.com/2.3/users/20403091?order=desc&sort=name&site=stackoverflow",
-  #   questions_url = "https://api.stackexchange.com/2.3/users/20403091/questions?order=desc&sort=activity&site=stackoverflow"
-  # )
-  #   puts "initializing"
-  #   @user_url = user_url
-  #   @questions_url = questions
-  # end
-
   def snake_name
     self.name.gsub(" ", "_").downcase
+  end
+
+  def self.social_content(social_name)
+    social_url = self.find_by(name: social_name).content
+    puts "social_url: #{social_url}"
+    
+    Rails.cache.fetch(
+      "#{social_name}_content",
+      expires_in: 24.hours
+    ) do 
+      HTTParty.get(social_url)
+    end
   end
 
   def self.stack_user

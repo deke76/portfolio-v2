@@ -1,6 +1,1 @@
-<%= turbo_frame_tag "turbo-social-content" do %>
-  <div class="card h-100 bg-dark position-relative">
-    <iframe class="card-body h-100" src="<%= @social.content %>" frameborder='0'></iframe>
-  </div>
-  <%= render "/layouts/new_tab_link" %>
-<% end %>
+<%= render 'layouts/content/sociablekit' %>

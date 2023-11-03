@@ -1,0 +1,13 @@
+<% puts "params: #{params}" %>
+<%= turbo_frame_tag "turbo-social-content" do %>
+  <div class="card h-100 bg-dark text-light justify-content-start position-relative">
+      <div class="card-body d-flex flex-column">
+        <div class="d-flex flex-column flex-md-row justify-content-md-between mb-3">
+          <%= render "#{params[:controller]}/user_info" %>
+          <%= render "#{params[:controller]}/badge_info" %>
+        </div>
+        <%= render "#{params[:controller]}/content_info"%>
+      </div>
+  </div>
+    <%= render "/layouts/navigation/new_tab_link" %>
+<% end %>

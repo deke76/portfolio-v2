@@ -5,7 +5,7 @@
   <% if @menu_items != nil %>
     <div class="nav justify-content-end text-light">
       <% @menu_items.each do |item| %>
-        <%= render "layouts/menu_item", menu_item: item %>
+        <%= render "layouts/navigation/menu_item", menu_item: item %>
       <% end %>
     </div>
   <% end %>
