@@ -1,8 +1,7 @@
-
 <nav class="navbar fixed-bottom navbar-dark bg-dark">
   <div class="container-fluid navbar-nav flex-row flex-md-column justify-content-around">
     <% @links.each do |link| %>
-      <%= turbo_frame_tag "first_turbo_frame", class: "nav-item" do %>
+      <%= turbo_frame_tag "main_nav_turbo_frame", class: "nav-item" do %>
         <%= link_to send("#{link.name}_path"),
             data: { turbo_frame: "turbo-page-content" },
             class: "nav-link" do %>

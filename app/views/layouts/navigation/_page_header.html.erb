@@ -3,7 +3,7 @@
     <%= @page_name %>
   </div>
   <% if @menu_items != nil %>
-    <div class="nav justify-content-end text-light">
+    <div class="nav d-flex flex-nowrap justify-content-end text-light">
       <% @menu_items.each do |item| %>
         <%= render "layouts/navigation/menu_item", menu_item: item %>
       <% end %>

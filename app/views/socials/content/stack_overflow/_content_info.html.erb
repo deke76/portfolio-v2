@@ -1,5 +1,5 @@
 <div class="d-flex flex-column" id="stack-questions">
-  <% @stack_questions.each do |question| %>
+  <% @content.each do |question| %>
     <%= link_to question["link"], target: "_blank", class: "text-decoration-none" do %>
       <div class="card p-0 my-1">
         <div class="card-header d-flex">

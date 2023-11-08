@@ -1,23 +1,23 @@
 <div class="d-flex flex-row mb-3 mb-md-0">
-  <%= image_tag @github_profile["avatar_url"], class: "img-thumbnail col-sm-3 p-0 b-0 me-3 d-none d-sm-block"  %>
+  <%= image_tag @profile["avatar_url"], class: "img-thumbnail col-sm-3 p-0 b-0 me-3 d-none d-sm-block"  %>
   <div class="text-start d-flex flex-column justify-content-around">  
     <div class="card-title mb-0">
       <h3>
-        <%= @github_profile["name"] %>
+        <%= @profile["name"] %>
       </h3>
     </div>
     <div class="small">
       <span class="d-block">
         <i class="bi bi-person-fill me-1"></i>
-        <%= @github_profile["login"] %>
+        <%= @profile["login"] %>
       </span>
       <span class="d-block">
         <i class="bi bi-hammer me-1"></i>
-        <%= Time.at(Time.parse(@github_profile["created_at"]).getutc).strftime('Member since %B, \'%y') %>
+        <%= Time.at(Time.parse(@profile["created_at"]).getutc).strftime('Member since %B, \'%y') %>
       </span>
       <span class="d-block">
         <i class="bi bi-clock-history me-1"></i>
-        Last updated <%= days_ago(Time.parse(@github_profile["updated_at"]).getutc) %>
+        Last updated <%= days_ago(Time.parse(@profile["updated_at"]).getutc) %>
         </span>
     </div>
   </div>

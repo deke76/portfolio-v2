@@ -1,21 +1,24 @@
 class Social < ApplicationRecord
+  belongs_to :icon
+
   def snake_name
     self.name.gsub(" ", "_").downcase
   end
 
-  def self.social_content(social_name)
-    social_url = self.find_by(name: social_name).content
-    puts "social_url: #{social_url}"
-    
+  def content
+    puts "*********************"
+    puts "Inside Social.content"
+    puts "*********************"
+
     Rails.cache.fetch(
-      "#{social_name}_content",
+      "#{self.name}_content",
       expires_in: 24.hours
     ) do 
-      HTTParty.get(social_url)
+      HTTParty.get(self.content_link)
     end
   end
 
-  def self.stack_user
+  def stack_overflow_user
     user_url = "https://api.stackexchange.com/2.3/users/20403091?order=desc&sort=name&site=stackoverflow"
 
     Rails.cache.fetch(
@@ -26,7 +29,7 @@ class Social < ApplicationRecord
     end
   end
 
-  def self.stack_questions
+  def stack_overflow_content
     questions_url = "https://api.stackexchange.com/2.3/users/20403091/questions?order=desc&sort=activity&site=stackoverflow"
 
     Rails.cache.fetch(
@@ -37,7 +40,7 @@ class Social < ApplicationRecord
     end
   end
 
-  def self.git_user
+  def github_user
     git_user_url = "https://api.github.com/user"
 
     Rails.cache.fetch(
@@ -52,30 +55,42 @@ class Social < ApplicationRecord
     end
   end
 
-  def self.git_repos(url)
-    Rails.cache.fetch(
-      "git_repos",
-      expires_in: 24.hours
-    ) do
-      HTTParty.get(url, :headers => {
-        "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer #{ENV.fetch("GIT_PAT")}",
-        "X-GitHub-Api-Version": "2022-11-28"
-      })
+  def github_content
+    git_user = self.github_user
+    git_content ||= {}
+    git_content["repos"] = self.git_repos git_user["repos_url"]
+    git_content["tags"] ||= {}
+    git_content["repos"].each do |repo|
+      languages ||= self.repo_tags repo
+      git_content["tags"][repo["name"]] = languages.keys
     end
+    return git_content
   end
 
-  def self.repo_tags(repo)
-    Rails.cache.fetch(
-      "github_#{repo["name"]}_tags",
-      expires_in: 24.hours
-    ) do
-      HTTParty.get(repo["languages_url"], :headers => {
-        "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer #{ENV.fetch("GIT_PAT")}",
-        "X-GitHub-Api-Version": "2022-11-28"
-      })
+  private 
+    def git_repos(url)
+      Rails.cache.fetch(
+        "git_repos",
+        expires_in: 24.hours
+      ) do
+        HTTParty.get(url, :headers => {
+          "Accept": "application/vnd.github+json",
+          "Authorization": "Bearer #{ENV.fetch("GIT_PAT")}",
+          "X-GitHub-Api-Version": "2022-11-28"
+        })
+      end
     end
-  end
 
+    def repo_tags(repo)
+      Rails.cache.fetch(
+        "github_#{repo["name"]}_tags",
+        expires_in: 24.hours
+      ) do
+        HTTParty.get(repo["languages_url"], :headers => {
+          "Accept": "application/vnd.github+json",
+          "Authorization": "Bearer #{ENV.fetch("GIT_PAT")}",
+          "X-GitHub-Api-Version": "2022-11-28"
+        })
+      end
+    end
 end

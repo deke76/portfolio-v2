@@ -1,23 +1,23 @@
 <div class="d-flex flex-row mb-3 mb-md-0">
-  <%= image_tag @stack_profile["profile_image"], class: "img-thumbnail col-sm-3 p-0 b-0 me-3 d-none d-sm-block"  %>
+  <%= image_tag @profile["profile_image"], class: "img-thumbnail col-sm-3 p-0 b-0 me-3 d-none d-sm-block"  %>
   <div class="text-start d-flex flex-column justify-content-around">
     <div class="card-title mb-0">
       <h3>
-        <%= @stack_profile["display_name"] %>
+        <%= @profile["display_name"] %>
       </h3>
     </div>
     <div class="small">
       <span class="d-block">
         <i class="bi bi-geo-alt-fill me-1"></i>
-        <%= @stack_profile["location"] %>
+        <%= @profile["location"] %>
       </span>
       <span class="d-block">
         <i class="bi bi-hammer me-1"></i>
-        <%= Time.at(@stack_profile["creation_date"]).strftime('Member since %B, \'%y') %>
+        <%= Time.at(@profile["creation_date"]).strftime('Member since %B, \'%y') %>
       </span>
       <span class="d-block">
         <i class="bi bi-clock-history me-1"></i>
-        Last visited <%= days_ago(@stack_profile["last_access_date"]) %></span>
+        Last visited <%= days_ago(@profile["last_access_date"]) %></span>
     </div>
   </div>
 </div>

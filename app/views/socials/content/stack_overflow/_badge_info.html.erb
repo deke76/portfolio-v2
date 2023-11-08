@@ -1,7 +1,7 @@
 <div class="d-flex flex-row flex-md-column justify-content-evenly px-3 py-2 py-md-0 outline">
-  <% @stack_profile["badge_counts"].each do |color, number| %>
+  <% @profile["badge_counts"].each do |color, number| %>
     <% if number > 0 then %>
-      <div class="position-relative h-25">
+      <div class="position-relative">
         <%= embedded_svg "#{color}-badge.svg", class: "h-100" %>
         <span class="fs-half bg-secondary rounded-pill position-absolute px-2 translate-middle-x"><%= number %></span>
       </div>

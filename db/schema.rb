@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_03_192232) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_07_213436) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_03_192232) do
     t.datetime "updated_at", null: false
     t.string "user_name"
     t.bigint "icon_id"
-    t.string "content"
+    t.string "content_link"
     t.index ["icon_id"], name: "index_socials_on_icon_id"
   end
 
