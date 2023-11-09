@@ -1,4 +1,4 @@
-<div class="py-0 px-1 overflow-y-scroll" id="git-repos">
+<div class="py-0 px-1 overflow-y-scroll" id="social-content">
   <% @content["repos"].each do |repo| %>
     <%= link_to repo["html_url"], target: "_blank", class: "text-decoration-none" do %>
       <div class="card p-0 my-1">
@@ -29,11 +29,11 @@
 <script>
   overflowSize = () => {
     const pageContent = document.getElementById("page-content");
-    const githubRepoContainer = document.getElementById("git-repos");
-    const githubRepoContainerTop = githubRepoContainer.getBoundingClientRect().top;
-    const githubRepoContainerBottom = pageContent.getBoundingClientRect().bottom;
-    const githubRepoContainerHeight = githubRepoContainerBottom - githubRepoContainerTop;
-    githubRepoContainer.style.height = `calc(${githubRepoContainerHeight}px - 1.25rem)`;  
+    const socialContentContainer = document.getElementById("social-content");
+    const socialContentContainerTop = socialContentContainer.getBoundingClientRect().top;
+    const socialContentContainerBottom = pageContent.getBoundingClientRect().bottom;
+    const socialContentContainerHeight = socialContentContainerBottom - socialContentContainerTop;
+    socialContentContainer.style.height = `calc(${socialContentContainerHeight}px - 1.25rem)`;  
   }
 
   overflowSize();
