@@ -1,44 +1,25 @@
-<div class="py-0 px-1 overflow-y-scroll" id="social-content">
-  <% @content["repos"].each do |repo| %>
-    <%= link_to repo["html_url"], target: "_blank", class: "text-decoration-none" do %>
-      <div class="card p-0 my-1">
-        <div class="card-header">
-          <%= repo["name"] %>
+<% @content["repos"].each do |repo| %>
+  <%= link_to repo["html_url"], target: "_blank", class: "text-decoration-none" do %>
+    <div class="card p-0 my-1">
+      <div class="card-header">
+        <%= repo["name"] %>
+      </div>
+      <% if repo["description"] != nil %>
+        <div class="card-body text-center small py-1">
+          <%= repo["description"] %>
         </div>
-        <% if repo["description"] != nil %>
-          <div class="card-body text-center small py-1">
-            <%= repo["description"] %>
-          </div>
+        <% end %>
+      <div class="card-footer d-flex justify-content-between align-items-center fw-lighter fs-half p-1">
+        <div class="ps-1">
+          <% @content["tags"][repo["name"]].each do |language|
+           %>
+            <span class="bg-secondary text-light rounded px-1"><%= language %></span>
           <% end %>
-        <div class="card-footer d-flex justify-content-between align-items-center fw-lighter fs-half p-1">
-          <div class="ps-1">
-            <% @content["tags"][repo["name"]].each do |language|
-             %>
-              <span class="bg-secondary text-light rounded px-1"><%= language %></span>
-            <% end %>
-          </div>
-          <div class="fst-italic pe-1">
-            <%= repo_updated repo %>
-          </div>
+        </div>
+        <div class="fst-italic pe-1">
+          <%= repo_updated repo %>
         </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
-</div>
-
-<script>
-  overflowSize = () => {
-    const pageContent = document.getElementById("page-content");
-    const socialContentContainer = document.getElementById("social-content");
-    const socialContentContainerTop = socialContentContainer.getBoundingClientRect().top;
-    const socialContentContainerBottom = pageContent.getBoundingClientRect().bottom;
-    const socialContentContainerHeight = socialContentContainerBottom - socialContentContainerTop;
-    socialContentContainer.style.height = `calc(${socialContentContainerHeight}px - 1.25rem)`;  
-  }
-
-  overflowSize();
-  
-  onresize = (event) => {
-    overflowSize();
-  }
-</script>
+<% end %>

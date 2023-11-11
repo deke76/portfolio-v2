@@ -1,28 +1,26 @@
-<div class="d-flex flex-column" id="social-content">
-  <% @content.each do |question| %>
-    <%= link_to question["link"], target: "_blank", class: "text-decoration-none" do %>
-      <div class="card p-0 my-1">
-        <div class="card-header d-flex">
-          <span class="text-start">
-            <%= Nokogiri::HTML.parse(question["title"]).text %>
-          </span>
+<% @content.each do |question| %>
+  <%= link_to question["link"], target: "_blank", class: "text-decoration-none" do %>
+    <div class="card p-0 my-1">
+      <div class="card-header d-flex">
+        <span class="text-start">
+          <%= Nokogiri::HTML.parse(question["title"]).text %>
+        </span>
+      </div>
+      <div class="card-footer d-flex justify-content-between align-items-center fw-lighter p-1">
+        <div class="ps-1 fs-half">
+          <% question["tags"].each do |tag| %>
+            <span class="bg-secondary text-light rounded fs-half px-1"><%= tag %></span>
+          <% end %>
         </div>
-        <div class="card-footer d-flex justify-content-between align-items-center fw-lighter p-1">
-          <div class="ps-1 fs-half">
-            <% question["tags"].each do |tag| %>
-              <span class="bg-secondary text-light rounded fs-half px-1"><%= tag %></span>
+        <div class="fst-italic fs-three_quarter pe-1">
+          <span class="d-6">
+            <% if question["is_answered"] %>
+              <i class="bi bi-check-circle-fill text-success"></i>
             <% end %>
-          </div>
-          <div class="fst-italic fs-three_quarter pe-1">
-            <span class="d-6">
-              <% if question["is_answered"] %>
-                <i class="bi bi-check-circle-fill text-success"></i>
-              <% end %>
-            </span>
-            <%= question_status question %>
-          </div>
+          </span>
+          <%= question_status question %>
         </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
-</div>
+<% end %>

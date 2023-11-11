@@ -5,8 +5,13 @@
           <%= render "socials/content/#{@social.name}/user_info" %>
           <%= render "socials/content/#{@social.name}/badge_info" %>
         </div>
-        <%= render "socials/content/#{@social.name}/content_info"%>
+        <div data-controller="social-content" 
+             data-action="resize@window->social-content#overflowSize"
+             class="py-0 px-1 overflow-y-scroll"
+             id="social-content-container">
+                 <%= render "socials/content/#{@social.name}/content_info"%>
+        </div>
       </div>
   </div>
-    <%= render "/layouts/navigation/new_tab_link" %>
+  <%= render "/layouts/navigation/new_tab_link" %>
 <% end %>
