@@ -1,6 +1,9 @@
-<%= turbo_frame_tag "social_turbo_frame", class: "nav-item" do %>
+<%= turbo_frame_tag "social_turbo_frame", class: "nav-item__page" do %>
   <%= link_to social_path(menu_item.name),
-      data: { turbo_frame: "turbo-social-content" },
+      data: { 
+        controller: "icon",
+        action: "click->icon#pageClick",
+        turbo_frame: "turbo-social-content" },
       class: "nav-link text-secondary pb-1" do %>
     <i class="<%= menu_item.bootstrap_class %>"></i>
   <% end %>

@@ -1,9 +1,16 @@
-<nav class="navbar fixed-bottom navbar-dark bg-dark">
+<nav class="navbar fixed-bottom navbar-dark bg-dark" id="main-navbar">
   <div class="container-fluid navbar-nav flex-row flex-md-column justify-content-around">
-    <% @links.each do |link| %>
-      <%= turbo_frame_tag "main_nav_turbo_frame", class: "nav-item" do %>
+    <% @links.each do |link, index| %>
+      <%= turbo_frame_tag "main_nav_turbo_frame", 
+        data: {
+          controller: "icon",
+          action: "click->icon#navClick"
+        },
+        class: "nav-item__main" do %>
         <%= link_to send("#{link.name}_path"),
-            data: { turbo_frame: "turbo-page-content" },
+            data: { 
+              turbo_frame: "turbo-page-content" 
+            },
             class: "nav-link" do %>
           <i class="<%= link.bootstrap_class %>"></i>
         <% end %>

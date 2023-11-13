@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import IconController from "./icon_controller"
+application.register("icon", IconController)
+
 import SocialContentController from "./social_content_controller"
 application.register("social-content", SocialContentController)

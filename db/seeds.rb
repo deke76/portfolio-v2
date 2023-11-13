@@ -49,26 +49,44 @@ Icon.create!({
 
 Icon.create!({
   name: "mail",
-  bootstrap_class: "bi bi-envelop",
+  bootstrap_class: "bi bi-envelope-fill",
   page: "messages",
 })
 
 Icon.create!({
   name: "chat",
-  bootstrap_class: "bi bi-chat-left",
+  bootstrap_class: "bi bi-chat-dots-fill",
   page: "messages",
 })
 
 Icon.create!({
   name: "telephone",
-  bootstrap_class: "bi bi-telephone-inbound",
+  bootstrap_class: "bi bi-telephone-inbound-fill",
   page: "messages",
 })
 
 Icon.create!({
   name: "form",
-  bootstrap_class: "bi bi-file-text",
+  bootstrap_class: "bi bi-clipboard2-fill",
   page: "messages",
+})
+
+Icon.create!({
+  name: "search",
+  bootstrap_class: "bi bi-search",
+  page: "projects",
+})
+
+Icon.create!({
+  name: "about",
+  bootstrap_class: "bi bi-file-person-fill",
+  page: "details",
+})
+
+Icon.create!({
+  name: "resume",
+  bootstrap_class: "bi bi-file-text-fill",
+  page: "details",
 })
 
 Icon.create!({
@@ -105,34 +123,34 @@ Social.create!({
   name: "linkedin",
   icon_id: 1,
   link: "https://www.linkedin.com/in/darcylauder",
-  content: "https://widgets.sociablekit.com/linkedin-profile-posts/iframe/215438"
+  content_link: "https://widgets.sociablekit.com/linkedin-profile-posts/iframe/215438"
 })
 
 Social.create!({
   name: "github",
   icon_id: 2,
   link: "https://www.github.com/deke76",
-  content: nil
+  content_link: nil
 })
 
 Social.create!({
   name: "stack_overflow",
   icon_id: 3,
   link: "https://www.stackoverflow.com/users/20403091/darcy?tab=profile",
-  content: nil
+  content_link: nil
 })
 
 Social.create!({
   name: "instagram",
   icon_id: 4,
   link: "https://www.instagram.com/dklaudsie",
-  content: "https://widgets.sociablekit.com/instagram-feed/iframe/215401"
+  content_link: "https://widgets.sociablekit.com/instagram-feed/iframe/215401"
 })
 
 Social.create!({
   name: "twitter",
   icon_id: 5,
   link: "https://twitter.com/DKLaudsie",
-  content: "https://widgets.sociablekit.com/twitter-feed/iframe/215418"
+  content_link: "https://widgets.sociablekit.com/twitter-feed/iframe/215418"
 })
 

@@ -6,10 +6,6 @@ class Social < ApplicationRecord
   end
 
   def content
-    puts "*********************"
-    puts "Inside Social.content"
-    puts "*********************"
-
     Rails.cache.fetch(
       "#{self.name}_content",
       expires_in: 24.hours
