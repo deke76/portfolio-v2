@@ -1,10 +1,15 @@
-<%= turbo_frame_tag "social_turbo_frame", class: "nav-item__page" do %>
+<%= turbo_frame_tag "social_turbo_frame",
+    data: {
+        controller: "icon",
+        action: "click->icon#pageClick mouseenter->icon#pageMouseEnter mouseleave->icon#pageMouseLeave"
+      },
+      class: "nav-item__page--inactive" do %>
   <%= link_to social_path(menu_item.name),
       data: { 
-        controller: "icon",
-        action: "click->icon#pageClick",
-        turbo_frame: "turbo-social-content" },
+        turbo_frame: "turbo-social-content"
+      },
       class: "nav-link text-secondary pb-1" do %>
-    <i class="<%= menu_item.bootstrap_class %>"></i>
+    <i class="<%= menu_item.bootstrap_class %>"
+       data-icon-target="link"></i>
   <% end %>
 <% end %>

@@ -1,9 +1,9 @@
-<div class="container d-flex justify-content-between align-items-end px-3 mb-2 border-bottom border-light" id="page-header">
-  <div class="text-light fst-italic display-6">
+<div class="container d-flex justify-content-between align-items-end px-3 mb-2" id="page-header">
+  <div class="text-start text-light fst-italic display-6 flex-grow-1 border-bottom border-light">
     <%= @page_name %>
   </div>
   <% if @menu_items != nil %>
-    <div class="nav d-flex flex-nowrap justify-content-end text-light">
+    <div class="nav d-flex flex-nowrap justify-content-end">
       <% @menu_items.each do |item| %>
         <%= render "layouts/navigation/menu_item", menu_item: item %>
       <% end %>

@@ -12,7 +12,6 @@
 
   &__main {
     @extend .nav-item;
-
     &:hover {
       background-color: $secondary;
     };
@@ -20,7 +19,28 @@
 
   &__page {
     @extend .nav-item;
-    border-bottom: solid yellow;
+    box-sizing: content-box;
+    &--inactive {
+      @extend .nav-item__page;
+      border-bottom: solid $light 1px;
+      &:hover {
+        background-color: $secondary;
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+      }
+    }
+
+    &--active {
+      @extend .nav-item__page;
+      & > .nav-link.a {
+        color: $light;
+      }
+      border-top: solid $light 1px;
+      border-left: solid $light 1px;
+      border-right: solid $light 1px;
+      border-top-right-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+    }
   }
 }
 
