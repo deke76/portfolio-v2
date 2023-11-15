@@ -90,12 +90,6 @@ Icon.create!({
 })
 
 Icon.create!({
-  name: "settings",
-  bootstrap_class: "bi bi-list",
-  page: "pages",
-})
-
-Icon.create!({
   name: "details",
   bootstrap_class: "bi bi-person-circle",
   page: "pages",

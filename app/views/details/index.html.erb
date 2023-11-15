@@ -2,21 +2,7 @@
 
   <%= render "layouts/navigation/page_header" %>
   
-  <div class="card bg-dark rounded-top-0 h-90 pb-3">
-    <div class="row g-0 h-100 flex-column">
-      <div class="col-sm-4 d-none d-sm-flex justify-content-center align-items-center bg-secondary rounded h-100 my-auto">
-        <%= image_tag "darcy_lauder_profile.png", class: "bg-secondary rounded img-responsive", style: "width: 65%", alt: "Picture of the author in a suit." %>
-      </div>
-      <div class="col-sm-8 h-100">
-        <div class="card-body px-2 py-0 h-100">
-          <div class="card-text-scroll text-light">
-            <div class="px-2">
-            <%= render "description"%>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>  
+  <%= turbo_frame_tag "turbo-detail-content", class: "h-100 d-flex flex-column" do %>
+  <% end %>
+
 <% end %>

@@ -4,9 +4,10 @@
         action: "click->icon#pageClick mouseenter->icon#pageMouseEnter mouseleave->icon#pageMouseLeave"
       },
       class: "nav-item__page--inactive" do %>
-  <%= link_to social_path(menu_item.name),
+  <% controller = params[:controller].chop %>
+  <%= link_to send("#{controller}_path", menu_item.name),
       data: { 
-        turbo_frame: "turbo-social-content"
+        turbo_frame: "turbo-#{controller}-content"
       },
       class: "nav-link text-secondary pb-1" do %>
     <i class="<%= menu_item.bootstrap_class %>"
