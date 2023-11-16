@@ -8,10 +8,10 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 20%;
 
   &__main {
     @extend .nav-item;
+    width: 20%;
     &:hover {
       background-color: $secondary;
     };
