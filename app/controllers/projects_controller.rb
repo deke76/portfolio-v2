@@ -7,6 +7,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    if !params[:id].is_a? Numeric
+      redirect_to projects_path id: params[:id]
+    end
+    puts "projects#show"
   end
 
 end

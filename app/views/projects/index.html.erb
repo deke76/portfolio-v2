@@ -2,10 +2,16 @@
 
   <%= render "layouts/navigation/page_header" %>
   
-  <div class="container-fluid h-90 pb-2">
-    <div class="column flex-sm-row card-group h-100 pt-0 pb-2 px-0">
-      <%= render @projects %>
+  <%= turbo_frame_tag "search-modal", class: "modal" do %>
+    <%= render "search" %>
+  <% end %>
+  
+  <%= turbo_frame_tag "turbo-project-content" do %>
+    <div class="container-fluid h-90">
+      <div class="column flex-sm-row card-group h-95 pt-0 pb-2 px-0">
+        <%= render @projects %>
+      </div>
     </div>
-  </div>
+  <% end %>
       
 <% end %>

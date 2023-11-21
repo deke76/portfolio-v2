@@ -2,7 +2,8 @@
   <div class="text-start text-light fst-italic display-6 flex-grow-1 border-bottom border-light">
     <%= @page_name %>
   </div>
-  <% if @menu_items != nil %>
+  
+  <%= turbo_frame_tag "turbo-search-form" do %>
     <div class="nav d-flex flex-nowrap justify-content-end">
       <% @menu_items.each do |item| %>
         <%= render "layouts/navigation/menu_item", menu_item: item %>

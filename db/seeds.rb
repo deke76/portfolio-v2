@@ -72,6 +72,12 @@ Icon.create!({
 })
 
 Icon.create!({
+  name: "list",
+  bootstrap_class: "bi bi-card-list",
+  page: "projects",
+})
+
+Icon.create!({
   name: "search",
   bootstrap_class: "bi bi-search",
   page: "projects",
